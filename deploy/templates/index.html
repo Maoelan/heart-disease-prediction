@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Heart Disease Prediction</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5 mb-4">Heart Disease Prediction</h1>
+        <form action="/predict" method="post">
+            <div class="form-group">
+                <label for="smoking">Smoking:</label>
+                <select class="form-control" id="smoking" name="smoking">
+                    <option value="No">No</option>
+                    <option value="Yes">Yes</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="stroke">Stroke:</label>
+                <select class="form-control" id="stroke" name="stroke">
+                    <option value="No">No</option>
+                    <option value="Yes">Yes</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="physical_health">Physical Health:</label>
+                <input type="number" step="0.01" class="form-control" id="physical_health" name="physical_health">
+            </div>
+            <div class="form-group">
+                <label for="diff_walking">Difficulty Walking:</label>
+                <select class="form-control" id="diff_walking" name="diff_walking">
+                    <option value="False">False</option>
+                    <option value="True">True</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="sex">Sex:</label>
+                <select class="form-control" id="sex" name="sex">
+                    <option value="Female">Female</option>
+                    <option value="Male">Male</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="diabetic">Diabetic:</label>
+                <select class="form-control" id="diabetic" name="diabetic">
+                    <option value="No">No</option>
+                    <option value="Yes">Yes</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="physical_activity">Physical Activity:</label>
+                <select class="form-control" id="physical_activity" name="physical_activity">
+                    <option value="False">False</option>
+                    <option value="True">True</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="kidney_disease">Kidney Disease:</label>
+                <select class="form-control" id="kidney_disease" name="kidney_disease">
+                    <option value="False">False</option>
+                    <option value="True">True</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="skin_cancer">Skin Cancer:</label>
+                <select class="form-control" id="skin_cancer" name="skin_cancer">
+                    <option value="False">False</option>
+                    <option value="True">True</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Predict</button>
+        </form>
+
+        {% if prediction is defined %}
+            <div class="mt-4">
+                {% if prediction == 0 %}
+                    <script>
+                        alert("Pasien tidak terkena penyakit jantung");
+                    </script>
+                {% else %}
+                    <script>
+                        alert("Pasien terkena penyakit jantung");
+                    </script>
+                {% endif %}
+            </div>
+        {% endif %}
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
