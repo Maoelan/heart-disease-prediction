@@ -31,7 +31,7 @@ how to run website :
 - set FLASK_APP=app.py
 - flask run
 
-and run http://127.0.0.1:5000 on browser :
+and run http://127.0.0.1:5000 :
 
 ![ezgif com-video-to-gif](https://github.com/Maoelan/heart-disease-prediction/assets/58927608/cc10a0c4-b41a-43e1-9cf2-c12e304190ac)
 
